@@ -1,0 +1,16 @@
+    <div class="col-md-6" offset-lt-md="1">
+        <form name="frm" ng-submit="addTodo()">
+            <div class="form-inline">
+                <input class="form-control" type="text" name="newTodo" ng-model="newTodo" required />
+                <button class="btn btn-success" type="submit" >Post</button>
+                <button type="button" class="btn btn-delete" ng-disabled="disabledBtn" ng-click="clearCompleted()">Clear checked todos</button>
+            </div>
+        </form>
+
+        <ul>
+            <li ng-repeat="todo in todos">
+                <input type="checkbox" id="madonna" ng-model="todo.done" ng-click="btnRef()"/>
+                <span ng-class="{'done' : todo.done}">{{todo.title}}</span>
+            </li>
+        </ul>
+    </div>
